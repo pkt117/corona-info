@@ -1,0 +1,12 @@
+@value colorDarkGrey from "./common/colors.css";
+
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  background-color: colorDarkGrey;
+  display: flex;
+}
