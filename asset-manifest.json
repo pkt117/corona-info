@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/corona-info/static/css/main.c48094bd.css",
+    "main.js": "/corona-info/static/js/main.7bdc32fe.js",
+    "index.html": "/corona-info/index.html",
+    "main.c48094bd.css.map": "/corona-info/static/css/main.c48094bd.css.map",
+    "main.7bdc32fe.js.map": "/corona-info/static/js/main.7bdc32fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c48094bd.css",
+    "static/js/main.7bdc32fe.js"
+  ]
+}
