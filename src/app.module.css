@@ -4,9 +4,36 @@
   box-sizing: border-box;
 }
 
-.app {
+.headerBox {
   width: 100%;
   height: 100vh;
-  background-color: colorDarkGrey;
   display: flex;
+  flex-direction: column;
+  background-color: colorDarkGrey;
+  overflow: hidden;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.route {
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.route::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (max-width: 950px) {
+  .app {
+    position: relative;
+  }
+
+  .route {
+    margin-bottom: 5em;
+  }
 }

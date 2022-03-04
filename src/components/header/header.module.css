@@ -1,0 +1,71 @@
+@value defaultFontColor from "../../common/colors.css";
+
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.toggle {
+  display: block;
+  width: 1.1rem;
+  height: 0.15rem;
+  margin: 0;
+  position: absolute;
+  top: 55%;
+
+  margin-left: 0.5em;
+  background-color: defaultFontColor;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.toggle::before,
+.toggle::after {
+  position: absolute;
+  content: "";
+  clear: both;
+  display: block;
+  position: absolute;
+  width: 1.1rem;
+  height: 100%;
+  background-color: defaultFontColor;
+  transition: all 200ms ease-in-out;
+}
+
+.toggle::before {
+  top: -0.4em;
+}
+
+.toggle::after {
+  top: 0.4em;
+}
+
+.toggle.active {
+  background-color: transparent;
+}
+
+.toggle.active::before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.toggle.active::after {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.title {
+  height: 100%;
+  margin: auto;
+  text-align: center;
+  color: defaultFontColor;
+}
+
+@media screen and (max-width: 950px) {
+  .header {
+    display: block;
+    padding: 1em;
+  }
+}

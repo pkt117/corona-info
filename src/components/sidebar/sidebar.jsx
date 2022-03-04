@@ -1,10 +1,14 @@
 import React from "react";
 import styles from "./sidebar.module.css";
 import { NavLink } from "react-router-dom";
+import { connect } from "react-redux";
+import { clickToggleButton } from "../../redux";
 
-const Sidebar = (props) => {
+const Sidebar = ({ toggle, clickToggleButton }) => {
   return (
-    <nav className={styles.sidebar}>
+    <nav
+      className={toggle ? `${styles.sidebar} ${styles.onBar}` : styles.sidebar}
+    >
       <h1 className={styles.title}>Corona Info</h1>
       <section className={styles.list}>
         <NavLink
@@ -12,22 +16,25 @@ const Sidebar = (props) => {
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.active}` : styles.link
           }
+          onClick={clickToggleButton}
         >
           국내현황
         </NavLink>
         <NavLink
-          to="/global"
+          to="/overseas_status"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.active}` : styles.link
           }
+          onClick={clickToggleButton}
         >
-          세계현황
+          해외현황
         </NavLink>
         <NavLink
           to="/vaccination_status"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.active}` : styles.link
           }
+          onClick={clickToggleButton}
         >
           접종현황
         </NavLink>
@@ -36,6 +43,7 @@ const Sidebar = (props) => {
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.active}` : styles.link
           }
+          onClick={clickToggleButton}
         >
           방역지침
         </NavLink>
@@ -44,4 +52,14 @@ const Sidebar = (props) => {
   );
 };
 
-export default Sidebar;
+const mapStateToProps = ({ sidebarToggleReducer: state }) => {
+  return {
+    toggle: state.toggle,
+  };
+};
+
+const mapDispatchToProps = {
+  clickToggleButton,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sidebar);

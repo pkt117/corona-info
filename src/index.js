@@ -3,15 +3,22 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./app";
 import { BrowserRouter } from "react-router-dom";
-import CoronaApi from "./services/corona-api";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
+import rootReducer from "./redux/root_reducer";
+import CoronaAPI from "./services/corona-api";
 
-const coronaApi = new CoronaApi();
+const coronaAPI = new CoronaAPI();
+
+const store = createStore(rootReducer);
 
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
-      <App coronaApi={coronaApi} />
-    </React.StrictMode>
+    <Provider store={store}>
+      <React.StrictMode>
+        <App coronaAPI={coronaAPI} />
+      </React.StrictMode>
+    </Provider>
   </BrowserRouter>,
   document.getElementById("root")
 );

@@ -1,0 +1,45 @@
+@value colorWhite, defaultFontColor, listBoxShadow, colorLightGrey, colorRed from "../../../common/colors.css";
+
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+  margin: 0.5em;
+  padding: 0.5em;
+  align-items: center;
+  background-color: colorLightGrey;
+  box-shadow: listBoxShadow;
+  position: relative;
+}
+
+.title {
+  color: defaultFontColor;
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+}
+
+.content_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: defaultFontColor;
+}
+
+.content__title {
+  font-size: 0.8rem;
+}
+
+.content__content {
+  font-size: 1.4rem;
+}
+
+.yesterday {
+  font-weight: bold;
+  color: colorRed;
+}

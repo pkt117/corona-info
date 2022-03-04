@@ -1,16 +1,19 @@
-@value colorWhite, colorLightGrey, colorMiddleGrey from "../../common/colors.css";
+@value colorWhite, defaultFontColor, colorLightGrey, colorDarkGrey, colorMiddleGrey, makerShadow from "../../common/colors.css";
 
 .sidebar {
   width: 100%;
   height: 100%;
   flex-basis: 20%;
   border-right: 1px solid colorMiddleGrey;
+  box-shadow: makerShadow;
+  background-color: colorDarkGrey;
+  z-index: 999;
 }
 
 .title {
   text-align: center;
   font-size: 1.4rem;
-  color: colorWhite;
+  color: defaultFontColor;
 }
 
 .list {
@@ -21,11 +24,29 @@
 .link {
   text-decoration: none;
   text-align: center;
-  color: colorWhite;
+  color: defaultFontColor;
   padding: 1em 0;
 }
 
 .active {
   background-color: colorLightGrey;
   font-weight: bold;
+}
+
+@media screen and (max-width: 950px) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: absolute;
+    width: 40%;
+    border: 0;
+    transition: transform 200ms ease-in-out;
+  }
+
+  .sidebar.onBar {
+    transform: translateX(0);
+  }
+
+  .title {
+    display: none;
+  }
 }
