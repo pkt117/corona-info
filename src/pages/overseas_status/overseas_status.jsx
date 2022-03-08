@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../../components/loading/loading";
-import StatusList from "../../components/overseas_status_components/status_list.jsx/status_list";
 import TotalStatus from "../../components/total_status/total_status";
 import SmallList from "../../components/overseas_status_components/small_list/small_list";
 import styles from "./overseas_status.module.css";
+import TableList from "../../components/overseas_status_components/table_list/table_list";
 
 const OverseasStatus = ({ coronaAPI }) => {
   const [loading, setLoading] = useState(true);
@@ -61,22 +61,22 @@ const OverseasStatus = ({ coronaAPI }) => {
             <h2 className={styles.subTitle}>{date} 기준 </h2>
 
             <div className={styles.country__list}>
-              <table border="1">
-                <thead>
-                  <tr>
-                    <td>국가</td>
-                    <td>확진자</td>
-                    <td>사망자</td>
-                  </tr>
-                </thead>
-                <tbody>
+              <div className={styles.table}>
+                <div className={styles.table__head}>
+                  <div className={styles.table__tr}>
+                    <div className={styles.table__td}>국가</div>
+                    <div className={styles.table__td}>확진자</div>
+                    <div className={styles.table__td}>사망자</div>
+                  </div>
+                </div>
+                <div className={styles.table__body}>
                   {Object.keys(data).map((key) => (
-                    <tr key={data[key].seq}>
-                      <StatusList data={data[key]} key={data[key].seq} />
-                    </tr>
+                    <div key={data[key].seq} className={styles.table__tr}>
+                      <TableList data={data[key]} key={data[key].seq} />
+                    </div>
                   ))}
-                </tbody>
-              </table>
+                </div>
+              </div>
 
               <div className={styles.small_list}>
                 {Object.keys(data).map((key) => (

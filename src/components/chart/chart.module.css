@@ -1,0 +1,62 @@
+@value smallMargin, mediumMargin, microFontSize, largeFontTitle from "../../common/size.css";
+
+.chart {
+  padding: smallMargin mediumMargin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: smallMargin;
+}
+
+.title {
+  text-align: center;
+  font-size: largeFontTitle;
+}
+
+.canvas {
+  width: 70%;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+
+  margin-top: mediumMargin;
+}
+
+.legend__list {
+  display: flex;
+  align-items: center;
+  flex-basis: 50%;
+  margin-bottom: calc(smallMargin * 1.6);
+}
+
+.legend__color {
+  display: block;
+  width: microFontSize;
+  height: microFontSize;
+  border-radius: 50%;
+}
+
+.legend__title {
+  white-space: nowrap;
+  margin-left: smallMargin;
+  font-size: microFontSize;
+}
+
+.legend__count {
+  white-space: nowrap;
+  font-size: microFontSize;
+  margin-left: calc(smallMargin / 2);
+}
+
+@media screen and (min-width: 550px) and (max-width: 750px) {
+  .canvas {
+    width: 50%;
+  }
+
+  .legend__list {
+    flex-basis: 33.3%;
+  }
+}

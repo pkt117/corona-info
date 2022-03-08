@@ -1,1 +1,21 @@
-@value titleSize: 1.4rem;
+/* margin , padding */
+@value smallMargin:  0.5rem;
+@value mediumMargin: 2rem;
+
+@value tableMargin: 0.05rem;
+
+/* font-size */
+@value microFontSize: 0.9rem;
+
+@value smallFontTitle: 0.9rem;
+@value smallFontData: 1.4rem;
+@value smallFontYesterday: 0.9rem;
+
+@value mediumFontTitle: 1.1rem;
+@value mediumFontData: 1.6rem;
+@value mediumFontYesterday: 1.1rem;
+
+@value largeFontTitle: 1.4rem;
+
+/* border-radius */
+@value smallRadius: 3rem;

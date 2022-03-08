@@ -1,5 +1,5 @@
-@value defaultFontColor, listBoxShadow, colorBlueGrey from "../../common/colors.css";
-@value titleSize from "../../common/size.css";
+@value defaultFontColor, listBoxShadow, colorBlueGrey, colorWhite from "../../common/colors.css";
+@value largeFontTitle, smallFontTitle, smallMargin, mediumMargin, mediumFontTitle, tableMargin from "../../common/size.css";
 
 .overseas {
   flex-basis: 80%;
@@ -9,14 +9,14 @@
 
 .title {
   text-align: center;
-  font-size: titleSize;
+  font-size: largeFontTitle;
   color: defaultFontColor;
   margin-bottom: 0;
 }
 
 .subTitle {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: smallFontTitle;
   color: defaultFontColor;
   opacity: 0.5;
 }
@@ -27,48 +27,58 @@
   justify-content: center;
 }
 
+.total {
+  flex-direction: column;
+  align-items: center;
+}
+
 .country__list {
-  padding-bottom: 2em;
+  padding-bottom: mediumMargin;
 }
 
-table {
-  border-collapse: collapse;
-  border-color: colorWhite;
+.table {
+  width: 70%;
+  margin: auto;
+  position: relative;
+  display: none;
+  background-color: colorWhite;
 }
 
-thead {
+.table__head .table__td {
   background-color: colorBlueGrey;
 }
 
-tr,
-td {
-  text-align: center;
-  color: defaultFontColor;
+.table__tr {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 35% 40% 25%;
 }
 
-td {
-  padding: 0.5em 1.2em;
-  width: 7.5rem;
+.table__td {
+  text-align: center;
+  color: defaultFontColor;
+  margin: tableMargin;
+  padding: smallMargin;
+  box-shadow: listBoxShadow;
 }
 
 .small_list {
-  display: none;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
   .total {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
   }
 
-  table {
-    display: none;
+  .table {
+    display: block;
   }
 
   .small_list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: none;
   }
 }

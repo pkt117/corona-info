@@ -1,11 +1,12 @@
 @value colorWhite, defaultFontColor, listBoxShadow, colorLightGrey, colorRed from "../../../common/colors.css";
+@value smallMargin, largeFontTitle, smallFontTitle, smallFontData from "../../../common/size.css";
 
 .box {
   display: flex;
   flex-direction: column;
   width: 85%;
-  margin: 0.5em;
-  padding: 0.5em;
+  margin: smallMargin;
+  padding: smallMargin;
   align-items: center;
   background-color: colorLightGrey;
   box-shadow: listBoxShadow;
@@ -14,8 +15,9 @@
 
 .title {
   color: defaultFontColor;
-  font-size: 1.5rem;
-  margin-bottom: 0.5em;
+  font-size: largeFontTitle;
+  margin-bottom: smallMargin;
+  font-weight: bold;
 }
 
 .content_box {
@@ -32,11 +34,11 @@
 }
 
 .content__title {
-  font-size: 0.8rem;
+  font-size: smallFontTitle;
 }
 
 .content__content {
-  font-size: 1.4rem;
+  font-size: smallFontData;
 }
 
 .infection {

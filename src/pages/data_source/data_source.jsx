@@ -9,6 +9,7 @@ const DataSource = (props) => {
         https://www.data.go.kr/iim/api/selectAPIAcountView.do 국내 예방접종 현황
         데이터 :
         https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15077756#/API%20%EB%AA%A9%EB%A1%9D/GETvaccine-stat
+        https://github.com/disease-sh/API 해외 코로나 현황 종합 데이터
       </pre>
     </>
   );

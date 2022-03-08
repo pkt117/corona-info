@@ -1,11 +1,13 @@
 @value colorWhite, defaultFontColor, listBoxShadow, colorLightGrey, colorRed from "../../common/colors.css";
 
+@value smallMargin, mediumMargin, smallFontTitle, smallFontData, smallFontYesterday, mediumFontTitle, mediumFontData, mediumFontYesterday from "../../common/size.css";
+
 .box {
   display: flex;
   flex-direction: column;
-  width: 12rem;
+  width: 85%;
   height: 8rem;
-  margin: 2em;
+  margin: smallMargin;
   justify-content: center;
   align-items: center;
   background-color: colorLightGrey;
@@ -17,27 +19,41 @@
 .data {
   color: defaultFontColor;
   text-align: center;
-  padding: 0.3em;
+  padding: smallMargin;
 }
 
 .title {
-  font-size: 0.8rem;
+  font-size: smallFontTitle;
 }
 
 .data {
-  font-size: 1.4rem;
+  font-size: smallFontData;
 }
 
 .yesterday {
   position: absolute;
-  bottom: 0.8em;
+  bottom: 0.6rem;
+  font-size: smallFontYesterday;
   font-weight: bold;
   color: colorRed;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (min-width: 650px) {
   .box {
-    width: 85%;
-    margin: 0.5em;
+    width: 30%;
+    height: 9rem;
+    margin: mediumMargin;
+  }
+
+  .title {
+    font-size: mediumFontTitle;
+  }
+
+  .data {
+    font-size: mediumFontData;
+  }
+
+  .yesterday {
+    font-size: mediumFontYesterday;
   }
 }

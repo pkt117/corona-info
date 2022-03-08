@@ -1,15 +1,20 @@
 @value listBoxShadow, defaultFontColor, colorLightGrey, colorRed from "../../../common/colors.css";
-@value smallMargin from "../../../common/size.css";
+@value smallMargin, mediumMargin, tableMargin from "../../../common/size.css";
 
 .element {
   color: defaultFontColor;
-  padding: smallMargin calc(smallMargin * 2);
-  box-shadow: listBoxShadow;
   background-color: colorLightGrey;
   text-align: center;
+  margin: tableMargin;
+  padding: smallMargin;
+  box-shadow: listBoxShadow;
 }
 
 .yesterday {
+  color: colorRed;
+  font-weight: bold;
+}
+.infection {
   color: colorRed;
   font-weight: bold;
 }

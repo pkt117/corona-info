@@ -49,36 +49,50 @@ const VaccinationStatus = ({ coronaAPI }) => {
             <h2 className={styles.subTitle}>{date} 기준 </h2>
 
             <div className={styles.region__list}>
-              <table border="1">
-                <thead>
-                  <tr>
-                    <td rowSpan={2}>구분</td>
-                    <td colSpan={2}>1차접종</td>
-                    <td colSpan={2}>2차접종</td>
-                    <td colSpan={2}>3차접종</td>
+              <table border="1" className={styles.table}>
+                <thead className={styles.table__head}>
+                  <tr className={styles.table__tr}>
+                    <td rowSpan={2} className={styles.table__td}>
+                      구분
+                    </td>
+                    <td colSpan={2} className={styles.table__td}>
+                      1차접종
+                    </td>
+                    <td colSpan={2} className={styles.table__td}>
+                      2차접종
+                    </td>
+                    <td colSpan={2} className={styles.table__td}>
+                      3차접종
+                    </td>
                   </tr>
-                  <tr>
-                    <td>당일 실적</td>
-                    <td>당일 누계</td>
-                    <td>당일 실적</td>
-                    <td>당일 누계</td>
-                    <td>당일 실적</td>
-                    <td>당일 누계</td>
+                  <tr className={styles.table__tr}>
+                    <td className={styles.table__td}>당일 실적</td>
+                    <td className={styles.table__td}>당일 누계</td>
+                    <td className={styles.table__td}>당일 실적</td>
+                    <td className={styles.table__td}>당일 누계</td>
+                    <td className={styles.table__td}>당일 실적</td>
+                    <td className={styles.table__td}>당일 누계</td>
                   </tr>
                 </thead>
-                <tbody>
-                  {Object.keys(data).map((key) => (
-                    <tr key={data[key].id}>
-                      <TableList data={data[key]} key={data[key].id} />
-                    </tr>
-                  ))}
+                <tbody className={styles.table__body}>
+                  {Object.keys(data).map(
+                    (key) =>
+                      data[key].sido != "전국" && (
+                        <tr key={data[key].id} className={styles.table__tr}>
+                          <TableList data={data[key]} key={data[key].id} />
+                        </tr>
+                      )
+                  )}
                 </tbody>
               </table>
 
               <div className={styles.small_list}>
-                {Object.keys(data).map((key) => (
-                  <SmallList data={data[key]} key={data[key].id} />
-                ))}
+                {Object.keys(data).map(
+                  (key) =>
+                    data[key].sido != "전국" && (
+                      <SmallList data={data[key]} key={data[key].id} />
+                    )
+                )}
               </div>
             </div>
           </div>

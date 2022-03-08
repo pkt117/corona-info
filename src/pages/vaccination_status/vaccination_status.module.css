@@ -1,5 +1,5 @@
 @value defaultFontColor, listBoxShadow, colorBlueGrey, colorWhite from "../../common/colors.css";
-@value titleSize from "../../common/size.css";
+@value largeFontSize, smallFontTitle, mediumMargin, smallMargin  from "../../common/size.css";
 
 .vaccination {
   flex-basis: 80%;
@@ -9,14 +9,14 @@
 
 .title {
   text-align: center;
-  font-size: titleSize;
+  font-size: largeFontTitle;
   color: defaultFontColor;
   margin-bottom: 0;
 }
 
 .subTitle {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: smallFontTitle;
   color: defaultFontColor;
   opacity: 0.5;
 }
@@ -27,48 +27,51 @@
   justify-content: center;
 }
 
-.region__list {
-  padding-bottom: 2em;
+.total {
+  flex-direction: column;
+  align-items: center;
 }
 
-table {
+.region__list {
+  padding-bottom: mediumMargin;
+}
+
+.table {
   border-collapse: collapse;
   border-color: colorWhite;
+  position: relative;
+  display: none;
+  margin: smallMargin;
 }
 
-thead {
+.table__head .table__td {
   background-color: colorBlueGrey;
 }
 
-tr,
-td {
+.table__td {
   text-align: center;
   color: defaultFontColor;
-}
-
-td {
-  padding: 0.5em 1.2em;
+  padding: smallMargin calc(smallMargin * 2);
   width: 7.5rem;
 }
 
 .small_list {
-  display: none;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 600px) {
   .total {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
   }
 
-  table {
-    display: none;
+  .table {
+    display: block;
   }
 
   .small_list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: none;
   }
 }

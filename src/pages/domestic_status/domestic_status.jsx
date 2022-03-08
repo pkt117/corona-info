@@ -3,8 +3,9 @@ import styles from "./domestic_status.module.css";
 
 import TotalStatus from "../../components/total_status/total_status";
 import Loading from "../../components/loading/loading";
-import StatusList from "../../components/domestic_status_components/status_list/status_list";
 import SmallList from "../../components/domestic_status_components/small_list/small_list";
+import TableList from "../../components/domestic_status_components/table_list/table_list";
+import GraphList from "../../components/domestic_status_components/graph_list/graph_list";
 
 const DomesticStatus = ({ coronaAPI }) => {
   const [data, setData] = useState(null);
@@ -65,27 +66,27 @@ const DomesticStatus = ({ coronaAPI }) => {
             <div className={styles.region__list}>
               {listNum === 1 ? (
                 <>
-                  <table border="1">
-                    <thead>
-                      <tr>
-                        <td>지역</td>
-                        <td>추가 확진자</td>
-                        <td>확진자</td>
-                        <td>완치자</td>
-                        <td>사망자</td>
-                      </tr>
-                    </thead>
-                    <tbody>
+                  <div border="1" className={styles.table}>
+                    <div className={styles.table__head}>
+                      <div className={styles.table__tr}>
+                        <div className={styles.table__td}>지역</div>
+                        <div className={styles.table__td}>추가 확진자</div>
+                        <div className={styles.table__td}>확진자</div>
+                        <div className={styles.table__td}>완치자</div>
+                        <div className={styles.table__td}>사망자</div>
+                      </div>
+                    </div>
+                    <div className={styles.table__body}>
                       {Object.keys(data).map(
                         (key) =>
                           data[key].countryName != "합계" && (
-                            <tr key={key}>
-                              <StatusList data={data[key]} key={key} />
-                            </tr>
+                            <div key={key} className={styles.table__tr}>
+                              <TableList data={data[key]} key={key} />
+                            </div>
                           )
                       )}
-                    </tbody>
-                  </table>
+                    </div>
+                  </div>
 
                   <div className={styles.small_list}>
                     {Object.keys(data).map(
@@ -97,7 +98,7 @@ const DomesticStatus = ({ coronaAPI }) => {
                   </div>
                 </>
               ) : (
-                <></>
+                <GraphList data={data} />
               )}
             </div>
           </div>
