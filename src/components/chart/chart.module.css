@@ -21,14 +21,14 @@
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-
+  justify-content: space-around;
   margin-top: mediumMargin;
 }
 
 .legend__list {
   display: flex;
   align-items: center;
-  flex-basis: 50%;
+  flex-basis: 45%;
   margin-bottom: calc(smallMargin * 1.6);
 }
 
@@ -51,12 +51,44 @@
   margin-left: calc(smallMargin / 2);
 }
 
-@media screen and (min-width: 550px) and (max-width: 750px) {
+@media screen and (min-width: 420px) and (max-width: 750px) {
+  .legend__list {
+    padding-left: calc(mediumMargin * 0.75);
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 750px) {
   .canvas {
     width: 50%;
   }
 
   .legend__list {
     flex-basis: 33.3%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .legend__list {
+    padding-left: calc(mediumMargin * 0.75);
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1724px) {
+  .legend {
+    width: 100%;
+  }
+
+  .canvas {
+    width: 50%;
+  }
+
+  .legend__list {
+    flex-basis: 33.3%;
+  }
+}
+
+@media screen and (min-width: 1725px) {
+  .legend {
+    width: 100%;
   }
 }

@@ -1,16 +1,33 @@
 import React from "react";
+import styles from "./data_source.module.css";
 
 const DataSource = (props) => {
   return (
     <>
-      <pre>
-        Open API => 국내 코로나 현황 데이터 :
-        https://github.com/dhlife09/Corona-19-API 해외 코로나 현황 데이터 :
-        https://www.data.go.kr/iim/api/selectAPIAcountView.do 국내 예방접종 현황
-        데이터 :
-        https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15077756#/API%20%EB%AA%A9%EB%A1%9D/GETvaccine-stat
-        https://github.com/disease-sh/API 해외 코로나 현황 종합 데이터
-      </pre>
+      <h1 className={styles.title}>자료 출처</h1>
+      <div className={styles.box}>
+        <a
+          href="https://www.data.go.kr/index.do"
+          target="_blank"
+          className={styles.link}
+        >
+          공공 데이터 포털 - 해외 코로나 현황, 국내 백신접종 현황 API
+        </a>
+        <a
+          href="https://github.com/dhlife09/Corona-19-API"
+          target="_blank"
+          className={styles.link}
+        >
+          Corona-19-API - 국내 코로나 현황 API
+        </a>
+        <a
+          href="https://github.com/disease-sh/API"
+          target="_blank"
+          className={styles.link}
+        >
+          disease-sh - 해외 코로나 종합 현황 API
+        </a>
+      </div>
     </>
   );
 };

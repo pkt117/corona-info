@@ -4,7 +4,7 @@ export default class CoronaAPI {
   // 코로나 국내 확진자 정보 가져오기
   async domesticStatus() {
     const createAxios = axios.create({
-      baseURL: process.env.REACT_APP_CORONA_DOMESTIC_URL,
+      baseURL: `https://pkt-proxy.herokuapp.com/${process.env.REACT_APP_CORONA_DOMESTIC_URL}`,
       params: { serviceKey: process.env.REACT_APP_CORONA_API_KEY },
     });
 
@@ -38,7 +38,7 @@ export default class CoronaAPI {
     const { getDt, returnDt } = this.calDate(dt, "vaccination");
 
     const createAxios = axios.create({
-      baseURL: process.env.REACT_APP_CORONA_VACCINATION_URL,
+      baseURL: `https://pkt-proxy.herokuapp.com/${process.env.REACT_APP_CORONA_VACCINATION_URL}`,
       params: {
         serviceKey: process.env.REACT_APP_CORONA_VACCINATION_KEY,
         "cond[baseDate::GTE]": getDt,
@@ -62,7 +62,7 @@ export default class CoronaAPI {
     const { getDt, returnDt } = this.calDate(dt, "overseas");
 
     const getData = axios.create({
-      baseURL: process.env.REACT_APP_CORONA_OVERSEAS_URL,
+      baseURL: `https://pkt-proxy.herokuapp.com/${process.env.REACT_APP_CORONA_OVERSEAS_URL}`,
       params: {
         serviceKey: process.env.REACT_APP_CORONA_OVERSEAS_KEY,
         startCreateDt: getDt,
@@ -72,7 +72,9 @@ export default class CoronaAPI {
     const data = (await getData.get()).data.response.body.items.item;
 
     // 해외 확진자 종합
-    const totalData = await axios.get("https://disease.sh/v3/covid-19/all");
+    const totalData = await axios.get(
+      "https://pkt-proxy.herokuapp.com/https://disease.sh/v3/covid-19/all"
+    );
 
     const totalDt = new Date(totalData.data.updated);
     const returnTotalDt = this.calDate(totalDt, "overseasTotal");
@@ -113,14 +115,4 @@ export default class CoronaAPI {
         return `${year} - ${month} - ${day}`;
     }
   };
-
-  // 크롤링하여 사용하려 했으나, cors 문제에 직면하였고, proxy 설정까지 해보았으나 404 에러..
-
-  // async overseasCrawling() {
-  //   try {
-  //     return await axios.get("https://www.worldometers.info/coronavirus/");
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // }
 }

@@ -4,7 +4,7 @@ import {
   OverseasStatus,
   DomesticStatus,
   VaccinationStatus,
-  GuidelineInfo,
+  DataSource,
 } from "./pages";
 import Sidebar from "./components/sidebar/sidebar";
 import Header from "./components/header/header";
@@ -30,7 +30,7 @@ function App({ coronaAPI }) {
               path="/vaccination_status"
               element={<VaccinationStatus coronaAPI={coronaAPI} />}
             />
-            <Route path="/guideline_info" element={<GuidelineInfo />} />
+            <Route path="/data_source" element={<DataSource />} />
           </Routes>
         </div>
       </section>

@@ -10,6 +10,7 @@ const Header = ({ toggle, clickToggleButton }) => {
         className={toggle ? `${styles.toggle} ${styles.active}` : styles.toggle}
         onClick={clickToggleButton}
       ></span>
+
       <h1 className={styles.title}>corona info</h1>
     </header>
   );

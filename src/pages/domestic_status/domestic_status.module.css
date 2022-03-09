@@ -1,5 +1,5 @@
 @value defaultFontColor, listBoxShadow, colorBlueGrey, colorWhite from "../../common/colors.css";
-@value LargeFontTitle, smallMargin, mediumMargin, mediumFontTitle, tableMargin from "../../common/size.css";
+@value largeFontTitle, smallMargin, mediumMargin, mediumFontTitle, tableMargin from "../../common/size.css";
 
 .domestic {
   flex-basis: 80%;
@@ -9,7 +9,7 @@
 
 .title {
   text-align: center;
-  font-size: LargeFontTitle;
+  font-size: largeFontTitle;
   color: defaultFontColor;
 }
 
@@ -43,10 +43,11 @@
   border: 0;
   cursor: pointer;
   font-size: mediumFontTitle;
+  opacity: 0.5;
 }
 
 .checked {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .table {

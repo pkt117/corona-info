@@ -7,6 +7,7 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./redux/root_reducer";
 import CoronaAPI from "./services/corona-api";
+import "@fortawesome/fontawesome-free/js/all.js";
 
 const coronaAPI = new CoronaAPI();
 

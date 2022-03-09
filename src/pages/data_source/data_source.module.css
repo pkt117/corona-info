@@ -1,0 +1,20 @@
+@value colorLightGrey,colorMiddleGrey from "../../common/colors.css";
+
+.title {
+  color: white;
+  margin-left: 2rem;
+}
+
+.box {
+  width: 80%;
+  margin: 2rem;
+  padding: 2rem;
+  background-color: colorLightGrey;
+  display: flex;
+  flex-direction: column;
+}
+
+.link {
+  color: white;
+  margin-bottom: 1rem;
+}

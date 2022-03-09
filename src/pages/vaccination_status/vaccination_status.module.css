@@ -1,5 +1,5 @@
 @value defaultFontColor, listBoxShadow, colorBlueGrey, colorWhite from "../../common/colors.css";
-@value largeFontSize, smallFontTitle, mediumMargin, smallMargin  from "../../common/size.css";
+@value largeFontTitle, smallFontTitle, mediumMargin, smallMargin  from "../../common/size.css";
 
 .vaccination {
   flex-basis: 80%;

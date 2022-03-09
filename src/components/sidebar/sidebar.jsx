@@ -38,14 +38,15 @@ const Sidebar = ({ toggle, clickToggleButton }) => {
         >
           접종현황
         </NavLink>
+
         <NavLink
-          to="/guideline_info"
+          to="/data_source"
           className={({ isActive }) =>
             isActive ? `${styles.link} ${styles.active}` : styles.link
           }
           onClick={clickToggleButton}
         >
-          방역지침
+          자료출처
         </NavLink>
       </section>
     </nav>
