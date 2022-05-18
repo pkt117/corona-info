@@ -1,1 +1,1 @@
-react practice
+corona-info
